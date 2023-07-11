@@ -2,19 +2,20 @@
 # Requires pandas:
 # pip install pandas
 import argparse
+import pandas as pd
 from csvProcessor import *
-from rates import *
 
 parser = argparse.ArgumentParser()
-parser.add_argument("net")
+parser.add_argument("-net", help="Path to your hourlyNetEnergy*.csv file")
 args = parser.parse_args()
 netEnergy = args.net
 
-# E27
-e27Result = fixedFee
 # Calculate Net Energy?
-#...add to result...
-processInput(netEnergy)
+netEnergyCalc = processInput(netEnergy)
+
+# E27
+e27Result = round(fixedFee + netEnergyCalc['e27Cost'].sum(), 2)
+
 
 # IF Net Energy doesn't work...
 # Process & Calculate Usage
@@ -28,7 +29,7 @@ processInput(netEnergy)
 #...add to result...
 
 # E15
-e15Result = fixedFee
+e15Result = round(fixedFee, 2)
 # Calculate Net Energy?
 #...add to result...
 
@@ -44,7 +45,7 @@ e15Result = fixedFee
 #...add to result...
 
 # E13
-e13Result = fixedFee
+e13Result = round(fixedFee, 2)
 # Calculate Net Energy?
 #...add to result...
 
@@ -60,7 +61,7 @@ e13Result = fixedFee
 #...add to result...
 
 # E14
-e14Result = fixedFee
+e14Result = round(fixedFee, 2)
 # Calculate Net Energy?
 #...add to result...
 
@@ -82,8 +83,8 @@ results = {
     'E13': e13Result,
     'E14': e14Result
 }
-print("Under E27 you would have paid... $" + e27Result)
-print("Under E15 you would have paid... $" + e15Result)
-print("Under E13 you would have paid... $" + e13Result)
-print("Under E14 you would have paid... $" + e14Result)
+print("Under E27 you would have paid... $" + str(e27Result))
+print("Under E15 you would have paid... $" + str(e15Result))
+print("Under E13 you would have paid... $" + str(e13Result))
+print("Under E14 you would have paid... $" + str(e14Result))
 print("The most affordable plan based on your inputs was " + min(results, key=results.get))
