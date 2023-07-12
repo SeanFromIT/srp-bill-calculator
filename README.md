@@ -11,4 +11,4 @@ Usage:
 `python3 solarCalculator.py -net /path/to/hourlyNetEnergy*.csv`
 where `/path/to/hourlyNetEnergy*.csv` is the file you downloaded from SRP's website from this screen:
 
-[!Screenshot of the SRP website Export to Excel feature.](./ExportToExcel.png)
+![Screenshot of the SRP website Export to Excel feature.](ExportToExcel.png)
