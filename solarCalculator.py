@@ -88,5 +88,8 @@ results = {
 print("Under E27 [Customer Generation Price Plan] you would have paid... $" + str(e27Result))
 print("Under E15 [Average Demand Price Plan] you would have paid... $" + str(e15Result))
 print("Under E13 [Time-of-Use Export Price Plan] you would have paid... $" + str(e13Result))
-print("Under E14 [Electric Vehicle (EV) Export Price Plan] you would have paid... $" + str(e14Result))
-print("The most affordable plan based on your inputs was " + min(results, key=results.get))
+print("Under E14 [Electric Vehicle (EV) Export Price Plan] you would have paid... $" + str(e14Result) + "\n")
+print("The most affordable plan based on your input was " + min(results, key=results.get) + "\n")
+
+print("NOTE: These projections don't include extra costs like SRP Earthwise. \
+As a result, they may not match your actual bill, but should accurately reflect the relative cost of the plans.")
