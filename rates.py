@@ -1,5 +1,8 @@
 fixedFee = 32.44
 
+################
+# DEMAND PLANS #
+################
 class demandPlans:
     month = {}
     month['november'] = month['december'] = month['january'] = month['february'] = month['march'] = month['april'] = {
@@ -20,7 +23,10 @@ class demandPlans:
         'demandChargeRemainder': 33.59,
         'averageDemandCharge': 21.94
     }
-    
+
+#######
+# E13 #
+#######
 class e13:
     month = {}
     month['november'] = month['december'] = month['january'] = month['february'] = month['march'] = month['april'] = {
@@ -33,7 +39,10 @@ class e13:
         'hour': [0.0759, 0.0759, 0.0759, 0.0759, 0.0759, 0.0759, 0.0759, 0.0759, 0.0759, 0.0759, 0.0759, 0.0759, 0.0759, 0.0759, 0.2438, 0.2438, 0.2438, 0.2438, 0.2438, 0.2438, 0.0759, 0.0759, 0.0759, 0.0759]
     }
     sellBackRate = 0.0281
-    
+
+#######
+# E14 #
+#######
 class e14:
     month = {}
     month['november'] = month['december'] = month['january'] = month['february'] = month['march'] = month['april'] = {
@@ -46,3 +55,6 @@ class e14:
         'hour': [0.0643, 0.0643, 0.0643, 0.0643, 0.0643, 0.0799, 0.0799, 0.0799, 0.0799, 0.0799, 0.0799, 0.0799, 0.0799, 0.0799, 0.2438, 0.2438, 0.2438, 0.2438, 0.2438, 0.2438, 0.0799, 0.0799, 0.0799, 0.0643]
     }
     sellBackRate = 0.0281
+
+# Source: https://www.phoenix.gov/financesite/Documents/Combined%20Tax%20Rate%20Chart%200122.pdf
+tax = 0.09
